@@ -16,49 +16,6 @@ class NewsFilter {
   }
 }
 
-
-class News {
-  String title;
-  String content;
-  String author;
-  DateTime date;
-  String img;
-
-  News({this.title, this.content, this.author, this.date, this.img});
-
-  News.fromJSON(var json) {
-    this.title = json["title"];
-    this.content = json["content"];
-    this.author = json["author"];
-    this.img = json["img"];
-    this.date = new DateTime.fromMillisecondsSinceEpoch(json["date"]);
-  }
-
-  String toString() {
-    return "[News: title='${this.title}', content='${this.content.substring(0, 20)}', author='${this.author}', img='${this.img}']";
-  }
-
-  Map toJSON() {
-    return {"title": "${this.title}", "content": "${this.author}", "author": "${this.author}", "date": 0, "img": "${this.img}"};
-  }
-}
-
-@Controller(
-    selector: "[news-add]",
-    publishAs: 'ctrl'
-) class NewsAddForm {
-
-  News news = new News();
-
-  NewsAddForm() {
-
-  }
-
-  void sendNews() {
-      HttpRequest.postFormData('addNews', {"data": JSON.encode({"title" :news.title, "content": news.content, "author": news.author, "date": 0, "img": "img"})});
-  }
-}
-
 @Controller(
   selector: "[news-list]",
   publishAs: 'ctrl'
@@ -68,7 +25,7 @@ class News {
 
   NewsList() {
     if (listOfNews.length == 0) {
-      this.fetchNewsFrom("news_data.json");
+      this.fetchNewsFrom("getNews");
     }
 
     /*new Timer.periodic(new Duration(seconds: 30), (e) {
@@ -77,12 +34,7 @@ class News {
   }
 
   void fetchNewsFrom(String url) {
-    HttpRequest.getString(url).then((String value) {
-      var data = JSON.decode(value);
-      for (var newsJsonData in data) {
-        NewsList.listNews.add(new News.fromJSON(newsJsonData));
-      }
-    });
+    // Récupérer les news
   }
 
   List<News> get listOfNews => NewsList.listNews;

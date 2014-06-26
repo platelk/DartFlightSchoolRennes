@@ -1,0 +1,29 @@
+<div class="featured-section add-news-form" news-add>
+    <div class="container-medium">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
+                <div class="col-sm-10">
+                    <input id="news-title" ng-model="ctrl.news.title" type="text" class="form-control" id="inputEmail3" placeholder="title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Author</label>
+                <div class="col-sm-10">
+                    <input id="news-author" ng-model="ctrl.news.author" type="text" class="form-control" id="inputPassword3" placeholder="Author">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Content</label>
+                <div class="col-sm-10">
+                    <textarea id="news-content" ng-model="ctrl.news.content" class="form-control" rows="5"></textarea>
+            </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" id="send-news-button" ng-click="ctrl.sendNews()">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

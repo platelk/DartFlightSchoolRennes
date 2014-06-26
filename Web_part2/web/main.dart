@@ -12,23 +12,11 @@ import 'package:angular/application_factory.dart';
 import 'package:animation/animation.dart' as anim;
 
 part 'Swipe.dart';
-part 'WearAppAngular.dart';
+part 'news.dart';
 part 'newsComponent.dart';
+part 'NewsAppAngular.dart';
 part 'utils.dart';
 
-class Wear {
-  JsObject _androidWear;
-
-  Wear() {
-    this._androidWear = context["AndroidWear"];
-  }
-
-  void sendNotification(String title, String text) {
-    print("Send notif");
-    if (_androidWear != null)
-      _androidWear.callMethod("sendNotification", [title, text]);
-  }
-}
 
 void setSwipeLeftSidePanel() {
   bool isSwipe = false;
@@ -51,15 +39,4 @@ void setSwipeLeftSidePanel() {
 void main() {
   //setSwipeLeftSidePanel();
   initAngular();
-  Wear wear = new Wear();
-
-  querySelector("#send-news-button").onClick.listen((MouseEvent e) {
-    print("click");
-      String title = querySelector("#news-title").nodeValue;
-      String author = querySelector("#news-author").nodeValue;
-      String content = querySelector("#news-content").nodeValue;
-      HttpRequest.postFormData('addNews', {"data": JSON.encode({"title" :title, "content": content, "author": author, "date": 0, "img": "img"})});
-  });
-  //var a = new Timer.periodic(new Duration(seconds: 5), (e) => wear.sendNotification("My notif", "This is a notification test by timer callback"));
-  //button.onClick.listen((e) => wear.sendNotification("My notif", "This is a notification test"));
 }

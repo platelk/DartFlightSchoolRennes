@@ -83,7 +83,7 @@ Maintenant que vous avez votre projet Dart, il faut commencer à le rendre un pe
 
 Pour ca on va rajouter un peu de code Dart dans notre fonction `main`. Notre premier but sera de transformer le mot donnée dans le champ texte par `Dart is awesome !`
 
-Pour vous aidez à faire ca je vais vous donnez 2 indications :
+Pour vous aidez à faire ça je vais vous donnez 2 indications :
 
 ####1. Un selecteur pour les selectionner tous !
 En Dart, il existe une fonction contenue dans le package `dart:html` qui se nomme `querySelector("Css selector")` cette fonction retourne un object (le premier si plusieurs correspondent à la recherche) demandé grâce au selecteur CSS.
@@ -93,7 +93,7 @@ En Dart, il existe une fonction contenue dans le package `dart:html` qui se nomm
 En Dart (qui permet la programmation asynchrone), il existe un concept appelé `Future<T>`. Les Futures sont des objects qui contiennent la valeur de retour d'une fonction et appelle la fonction demande SEULEMENT quand la valeur est disponible.
 petit exemple :
 
-> J'ai un boutton et je veux appeler la fonction associée au bouton SEULEMENT quand un utilisateur a appuyé sur le bouton. pour faire ca en dart:
+> J'ai un boutton et je veux appeler la fonction associée au bouton SEULEMENT quand un utilisateur a appuyé sur le bouton. pour faire ça en dart:
 
 ```dart
 import 'dart:html'
@@ -137,7 +137,7 @@ part of main /* pourquoi 'main' ? car c'est le nom donné après la directive 'l
 > #####___Note:___ *Ici on utilise 'part', car on considère que news.dart est un fichier utilisé par notre projet et que cela ne sert à rien de l'exporter car trop spécifique a notre problème. Si nous voulions préciser que ce fichier contient des choses plus génériques, on utiliserait la directive `import`*
 
 Bon une news c'est composé de quoi ? un titre, un auteur, un contenu, une date et un lien vers la news complète.
-Ca a l'air d'être un bon début. maintenant, une class en dart :
+Cela a l'air d'être un bon début. maintenant, une class en dart :
 
 ```dart
 
@@ -151,7 +151,7 @@ class MyClass {
 ```
 
 
-Ah non attendez, c'est chiant d'écrire 2 fois l'attribut myAttr juste pour initializer mon attribut. c'est mieux comme ca :
+Ah non attendez, c'est chiant d'écrire 2 fois l'attribut myAttr juste pour initializer mon attribut. c'est mieux comme ça :
 
 ```dart
 
@@ -175,8 +175,8 @@ my_func(param1: 24, param2: 42);
 ...
 
 * Maintenant que l'on a une news, on va créer une classe pour notre flux de news,`NewsList` , comprenant comme attribut `List<News> listOfNews`, ne vous inquiétez pas de où vous déclarez votre classe par rapport à news, Dart se débrouillera :), mais par contre pensez à initialiser votre liste dans le constructeur.
-* 
-* Après ca, rajoutez des news dans la liste de news dans le constructeur de votre classe, de cette manière :
+
+* Après ça, rajoutez des news dans la liste de news dans le constructeur de votre classe, de cette manière :
 ```dart
 listOfNews.add(new News(/* Vos paramètre*/));
 ```
@@ -253,7 +253,7 @@ Ah ! C'est mieux là non ? ;)
 
 ### Filtrez les tous !
 
-Maintenant on va crée un filtre pour connecter nôtre champs texte de recherche à la liste de news afin de permettre une recherche dynamique dans cette liste. Pour ca, le site officiel de AngularDart est le meilleur endroit, donc allez voir sur le site officiel: [AngularDart: Filter-Service](https://angulardart.org/tutorial/07-ch05-filter-service.html)
+Maintenant on va crée un filtre pour connecter nôtre champs texte de recherche à la liste de news afin de permettre une recherche dynamique dans cette liste. Pour ça, le site officiel de AngularDart est le meilleur endroit, donc allez voir sur le site officiel: [AngularDart: Filter-Service](https://angulardart.org/tutorial/07-ch05-filter-service.html)
 
 > Astuce: Google est vraiment votre amis :)
 
@@ -275,13 +275,16 @@ dependencies:
         git: git://github.com/platelk/cameleon.dart.git
 ```
 
-Comme vous pouvez le voir, vous aller utiliser une lib que j'ai réalisé afin de simplifier la création d'application serveur basé sur HTTP. la doc est disponible ici : [Cameleon.dart](http://www.dartdocs.org/documentation/cameleon/0.3.3/index.html#cameleon). J'ai fait ce choix pour vous éviter de ré-implémenter certaine chose un peu longue comme les données POST. je vous invite comme même à regarder une mini implémentation pure dart d'un mini-serveur HTTP : [HTTP Server in Dart](https://www.dartlang.org/articles/io/#writing-web-servers)
+Comme vous pouvez le voir, vous aller utiliser une lib que j'ai réalisé afin de simplifier la création d'application serveur basé sur HTTP. la doc est disponible ici : [Cameleon.dart](http://www.dartdocs.org/documentation/cameleon/0.3.3/index.html#cameleon). 
+J'ai fait ce choix pour vous éviter de ré-implémenter certaine chose un peu longue comme les données POST. je vous invite comme même à regarder une mini implémentation pure dart d'un mini-serveur HTTP : [HTTP Server in Dart](https://www.dartlang.org/articles/io/#writing-web-servers)
 
-Pour le lancer, faite simplement un clic droit. Avec ca, vôtre site web est disponible pour le monde autour de vous, quelqu'un à coté de vous peut taper sur son navigateur 'http://votre_ip:4545/' et Tadaaaa ! le site apparait.
+Pour le lancer, faite simplement un clic droit. Avec ça, vôtre site web est disponible pour le monde autour de vous, quelqu'un à coté de vous peut taper sur son navigateur 'http://votre_ip:4545/' et Tadaaaa ! le site apparait.
 
 ### 2.21 News !!! (mais enfin c'est quoi une news ?)
 
-D'accord c'est super, mais c'est un peu pauvre en fonctionnalitée, pour résoudre ca on va crée un système de génération de news (aléatoire d'abord et plus élaboré pour ceux qui le veulent). pour ca vous allez `import '../web/news.dart'` et ajouter à votre classe `News` une methode `String toJSON()`
+D'accord c'est super, mais c'est un peu pauvre en fonctionnalitée, pour résoudre ça on va crée un système de génération de news (aléatoire d'abord et plus élaboré pour ceux qui le veulent). 
+
+Pour ca vous allez `import '../web/news.dart'` et ajouter à votre classe `News` une methode `String toJSON()`
 > #####Astuce: 'dart:convert' et JSON
 
 Maintenant que vous pouvez sérialiser vos News, vous allez pouvoir remplir la methode `String getNews()` qui doit renvoyer une `List<News>` sous forme de chaine de caractère.
@@ -290,3 +293,42 @@ Pour tester le bon fonctionnement de votre fonction, tapez simple 'http://127.0.
 
 ### Vous voulez une news ? oui en juste une requete. Vous voulez pas une news d'abord ?
 
+Votre serveur est prêt pour envoyer des news à la demande, maintenant retournons sur le client afin de récuperer ces news. Pour les récupérer il faut faire une requête HTTP au serveur pour récupérer les info.
+
+pour ça : [Doc HttpRequest](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-dom-html.HttpRequest)
+
+> Pour récuper les news, vous pouvez ajouter un constructeur nommé pour construire une News à partir d'un JSON comme ceux ci :
+
+```dart
+News(/* ... */);
+
+News.fromJSON(var json) {
+ // ...
+}
+```
+> 'dart:convert' et JSON peut encore vous servir ;)
+
+### Tu ne newseras pas !
+
+Notre système à des bases solides, maintenant il faut l'améliorer pour le rendre vraiment sympa. Pour cela on va mettre un petit formulaire pour envoyer des news et les affichers directement.
+
+Pour cela, il y a les ressources disponible dans `Web_part3`, et cela rajoute :
+
+ * [NgRoute](https://angulardart.org/tutorial/08-ch06-view.html) : Angular propose un composent permettant de "simuler" une navigation entre plusieur page, mais sans chargement de la nouvelle par car elle a déjà été préchargée.
+ * Une découpe par module avec `news_page.html` et `add_news.html`
+ * Un nouveau controller pour la page d'envoie de news
+
+Avec ça et tous ce que l'on a vu avant, cela ne devrait pas être un problème ;)
+
+
+## C'est Fini, mais pas vraiment !
+
+Voilà, le TP principale est fini, mais vous pouvez continuer en rajoutant :
+
+* un eport RSS de vos news
+* Mettre des animations d'entré sur la page `about.html`
+* Passer votre app sur android !
+* Faire une snake (Pourquoi pas ? si vous voulez de le faire voici un lib pour vous aider : [StageXL](http://pub.dartlang.org/packages/stagexl) )
+
+
+J'espère que vous vous êtes amusés à faire le TP et surtout que vous avez appris des choses et du Dart.
