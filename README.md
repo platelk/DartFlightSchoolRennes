@@ -28,21 +28,24 @@ Le commencement de toute chose est de créer un nouveau projet. Pour ça faites 
 ### - Un projet Dart
 Comme vous pouvez le voir, plusieurs dossiers et fichiers sont présents, faisons un peu le tour :
 
--  ###/
- * ####packages
+-  /
+ * packages
  > Contient les dépendences de votre projet (les libs)
- * ####web 
+ * web 
  > Contient tous vos fichier de développement
     
-    * #####fonts/
-    * #####images/
-    * #####scripts/
-    * #####styles/
-    * #####main.dart
+    * fonts/
+    * images/
+    * scripts/
+    * styles/
+    * main.dart
+    
     > Point d'entrée de votre programme
-    * #####index.html
+
+    * index.html
+
     > Votre page web (votre vu si vous préférez)
- * ####pubspec.yaml
+ * pubspec.yaml
  > Fichier de configuration de votre application qui vous permettera de gérer vos dépendences.
 
 Maintenant que l'on a vu ce que contenait notre dossier, intéréssons nous au fichier **main.dart**
