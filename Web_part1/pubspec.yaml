@@ -1,0 +1,7 @@
+name: News
+version: 0.0.1
+dependencies:
+  angular: '>=0.12.0'
+  animation:
+    git: git://github.com/platelk/Animation.git
+  browser: '>= 0.10.0'

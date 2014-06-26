@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/packages/WearApp" />
+      <excludeFolder url="file://$MODULE_DIR$/web/css/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/fonts/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/icons/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/images/touch/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/img/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/js/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/scripts/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/styles/components/_components/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/styles/components/_modules/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/styles/components/_pages/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/styles/components/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/styles/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/template/news/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/template/packages" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="application" />
+    <orderEntry type="library" name="sass-stdlib" level="application" />
+  </component>
+</module>
+

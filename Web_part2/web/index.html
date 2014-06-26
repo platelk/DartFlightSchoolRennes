@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- iOS icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/touch/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/touch/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/touch/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-57x57-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- Generic Icon -->
+    <link rel="shortcut icon" href="images/touch/touch-icon-57x57.png">
+
+    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Chrome Add to Homescreen -->
+    <link rel="shortcut icon" sizes="196x196" href="images/touch/touch-icon-196x196.png">
+
+    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+    <!--
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    -->
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-theme.min.css">
+    <!-- build:css styles/components/main.min.css -->
+    <link rel="stylesheet" href="styles/h5bp.css">
+    <link rel="stylesheet" href="styles/components/components.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body ng-app>
+<header class="app-bar promote-layer">
+    <div class="app-bar-container">
+        <button class="menu"><img src="images/hamburger.svg"></button>
+        <h1 class="logo"><img class="circle-image" src="img/dart-logo.png">Dart Flight School Rennes</h1>
+        <section class="app-bar-actions">
+            <!-- Put App Bar Buttons Here -->
+        </section>
+    </div>
+</header>
+
+<nav class="navdrawer-container promote-layer">
+    <h4>Navigation</h4>
+    <ul>
+        <li><a href="#/news">News</a></li>
+        <li><a href="#/addNews">Data</a></li>
+        <li><a href="#/about">About me</a></li>
+    </ul>
+</nav>
+<main>
+    <div class="featured-section news-feed" news-list>
+        <div class="container-medium">
+            <input id="news-filter-formatter" placeholder="news search" class="form-control" type="text" ng-model="ctrl.newsFilter">
+            <ul class="featured-list" ng-repeat="news in ctrl.listOfNews | newsFilter:ctrl.newsFilter">
+                <li class="featured-list__item clear news-component">
+                    <div class="container-small">
+                        <div class="featured-list__content g--half">
+                            <h4>{{news.title}}</h4>
+                            <p>{{news.content}}</p>
+                            <a href="#" class="cta--primary">link</a>
+                        </div>
+                        <div class="featured-list__img-wrapper g--half g--last">
+                            <div class="featured-list__img">
+                                <img ng-src={{news.img}} alt="image exemple">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>
+
+<script type="application/dart" src="main.dart"></script>
+<script type="application/javascript" src="packages/browser/dart.js"></script>
+<script type="application/javascript" src="scripts/jquery-2.1.1.min.js"></script>
+<script type="application/javascript" src="scripts/bootstrap.min.js"></script>
+<script src="scripts/main.js"></script>
+</html>
