@@ -28,21 +28,24 @@ Le commencement de toute chose est de créer un nouveau projet. Pour ça faites 
 ### - Un projet Dart
 Comme vous pouvez le voir, plusieurs dossiers et fichiers sont présents, faisons un peu le tour :
 
--  ###/
- * ####packages
+-  /
+ * packages
  > Contient les dépendences de votre projet (les libs)
- * ####web 
+ * web 
  > Contient tous vos fichier de développement
     
-    * #####fonts/
-    * #####images/
-    * #####scripts/
-    * #####styles/
-    * #####main.dart
+    * fonts/
+    * images/
+    * scripts/
+    * styles/
+    * main.dart
+    
     > Point d'entrée de votre programme
-    * #####index.html
+
+    * index.html
+
     > Votre page web (votre vu si vous préférez)
- * ####pubspec.yaml
+ * pubspec.yaml
  > Fichier de configuration de votre application qui vous permettera de gérer vos dépendences.
 
 Maintenant que l'on a vu ce que contenait notre dossier, intéréssons nous au fichier **main.dart**
@@ -253,19 +256,19 @@ Ah ! C'est mieux là non ? ;)
 
 ### Filtrez les tous !
 
-Maintenant on va crée un filtre pour connecter nôtre champs texte de recherche à la liste de news afin de permettre une recherche dynamique dans cette liste. Pour ça, le site officiel de AngularDart est le meilleur endroit, donc allez voir sur le site officiel: [AngularDart: Filter-Service](https://angulardart.org/tutorial/07-ch05-filter-service.html)
+Maintenant on va crée un filtre pour connecter notre champ texte de recherche à la liste de news afin de permettre une recherche dynamique dans cette liste. Pour ça, le site officiel de AngularDart est le meilleur endroit, donc allez voir sur le site officiel: [AngularDart: Filter-Service](https://angulardart.org/tutorial/07-ch05-filter-service.html)
 
-> Astuce: Google est vraiment votre amis :)
+> Astuce: Google est vraiment votre ami :)
 
 ## (Insérer une blague: serveur)
 
 ### Configuration
-Maintenant que l'on a fait un peu la partie client, intéréssont nous au serveur. Dart a été créé également pour réaliser des applications qui vont tourner dans le cloud, ou tous simplement sur un serveur. Pour cela, c'est très simple :
+Maintenant que l'on a fait un peu la partie client, intéressons nous au serveur. Dart a été créé également pour réaliser des applications qui vont tourner dans le cloud, ou tous simplement sur un serveur. Pour cela, c'est très simple :
 * Ouvrer un nouveau projet avec le dossier `Web_part2`
 
-OU si vous voulez garder votre travail :
+Ou si vous voulez garder votre travail :
 
-* Crée un dossier  `server/` à la racine de votre projet
+* Créez un dossier  `server/` à la racine de votre projet
 * Récuperez le fichier `server/server.dart` du dossier `Web_part2`
 * Ajouter dans le fichier `pubspec.yaml` les lignes suivantes :
 
@@ -275,14 +278,14 @@ dependencies:
         git: git://github.com/platelk/cameleon.dart.git
 ```
 
-Comme vous pouvez le voir, vous aller utiliser une lib que j'ai réalisé afin de simplifier la création d'application serveur basé sur HTTP. la doc est disponible ici : [Cameleon.dart](http://www.dartdocs.org/documentation/cameleon/0.3.3/index.html#cameleon). 
-J'ai fait ce choix pour vous éviter de ré-implémenter certaine chose un peu longue comme les données POST. je vous invite comme même à regarder une mini implémentation pure dart d'un mini-serveur HTTP : [HTTP Server in Dart](https://www.dartlang.org/articles/io/#writing-web-servers)
+Comme vous pouvez le voir, vous aller utiliser une lib que j'ai réalisé afin de simplifier la création d'applications serveur basée sur HTTP. la doc est disponible ici : [Cameleon.dart](http://www.dartdocs.org/documentation/cameleon/0.3.3/index.html#cameleon). 
+J'ai fait ce choix pour vous éviter de ré-implémenter certaines choses un peu longues comme les données POST. Je vous invite quand même à regarder une mini implémentation pure dart d'un mini-serveur HTTP : [HTTP Server in Dart](https://www.dartlang.org/articles/io/#writing-web-servers)
 
-Pour le lancer, faite simplement un clic droit. Avec ça, vôtre site web est disponible pour le monde autour de vous, quelqu'un à coté de vous peut taper sur son navigateur 'http://votre_ip:4545/' et Tadaaaa ! le site apparait.
+Pour le lancer, faite simplement un clic droit. Avec ça, votre site web est disponible pour le monde autour de vous, quelqu'un à coté de vous peut taper sur son navigateur 'http://votre_ip:4545/' et Tadaaaa ! le site apparait.
 
 ### 2.21 News !!! (mais enfin c'est quoi une news ?)
 
-D'accord c'est super, mais c'est un peu pauvre en fonctionnalitée, pour résoudre ça on va crée un système de génération de news (aléatoire d'abord et plus élaboré pour ceux qui le veulent). 
+D'accord c'est super, mais c'est un peu pauvre en fonctionnalités, pour résoudre ça on va créer un système de génération de news (aléatoire d'abord et plus élaboré pour ceux qui le veulent). 
 
 Pour ca vous allez `import '../web/news.dart'` et ajouter à votre classe `News` une methode `String toJSON()`
 > #####Astuce: 'dart:convert' et JSON
@@ -293,7 +296,7 @@ Pour tester le bon fonctionnement de votre fonction, tapez simple 'http://127.0.
 
 ### Vous voulez une news ? oui en juste une requete. Vous voulez pas une news d'abord ?
 
-Votre serveur est prêt pour envoyer des news à la demande, maintenant retournons sur le client afin de récuperer ces news. Pour les récupérer il faut faire une requête HTTP au serveur pour récupérer les info.
+Votre serveur est prêt pour envoyer des news à la demande, maintenant retournons sur le client afin de récuperer ces news. Pour les récupérer il faut faire une requête HTTP au serveur pour récupérer les infos.
 
 pour ça : [Doc HttpRequest](https://api.dartlang.org/apidocs/channels/stable/dartdoc-viewer/dart-dom-html.HttpRequest)
 
@@ -310,23 +313,23 @@ News.fromJSON(var json) {
 
 ### Tu ne newseras pas !
 
-Notre système à des bases solides, maintenant il faut l'améliorer pour le rendre vraiment sympa. Pour cela on va mettre un petit formulaire pour envoyer des news et les affichers directement.
+Notre système a des bases solides, maintenant il faut l'améliorer pour le rendre vraiment sympa. Pour cela on va mettre un petit formulaire pour envoyer des news et les afficher directement.
 
 Pour cela, il y a les ressources disponible dans `Web_part3`, et cela rajoute :
 
- * [NgRoute](https://angulardart.org/tutorial/08-ch06-view.html) : Angular propose un composent permettant de "simuler" une navigation entre plusieur page, mais sans chargement de la nouvelle par car elle a déjà été préchargée.
+ * [NgRoute](https://angulardart.org/tutorial/08-ch06-view.html) : Angular propose un composent permettant de "simuler" une navigation entre plusieura page, mais sans chargement de la nouvelle car elle a déjà été préchargée.
  * Une découpe par module avec `news_page.html` et `add_news.html`
  * Un nouveau controller pour la page d'envoie de news
 
-Avec ça et tous ce que l'on a vu avant, cela ne devrait pas être un problème ;)
+Avec ça et tout ce que l'on a vu avant, cela ne devrait pas être un problème ;)
 
 
 ## C'est Fini, mais pas vraiment !
 
-Voilà, le TP principale est fini, mais vous pouvez continuer en rajoutant :
+Voilà, le TP principal est fini, mais vous pouvez continuer en rajoutant :
 
-* un eport RSS de vos news
-* Mettre des animations d'entré sur la page `about.html`
+* un export RSS de vos news
+* Mettre des animations d'entrée sur la page `about.html`
 * Passer votre app sur android !
 * Faire une snake (Pourquoi pas ? si vous voulez de le faire voici un lib pour vous aider : [StageXL](http://pub.dartlang.org/packages/stagexl) )
 
